@@ -1,0 +1,21 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+foreman.sqlite*
+.foreman/
+
+# macOS
+.DS_Store
+
+# Work copies the agent creates (<repo>_foreman)
+*_foreman/
+
+# Teaching material — not part of the runnable artefact
+docs/
+PROJECT_DESIGN.md
+handout/
+target_repo/
