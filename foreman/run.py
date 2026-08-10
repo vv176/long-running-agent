@@ -225,6 +225,11 @@ def main() -> None:
         drive(a.resume)
         return
 
+    # Everything below makes model calls. Check the key HERE, not inside a worker
+    # thread four minutes in — the read-only modes above deliberately work without one.
+    if not config.OPENAI_API_KEY:
+        sys.exit("OPENAI_API_KEY missing. Copy .env.example to .env and fill it in.")
+
     if not a.repo:
         ap.error("--repo is required")
     repo = Path(a.repo).resolve()
